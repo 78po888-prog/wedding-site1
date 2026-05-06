@@ -282,20 +282,16 @@ function submitRSVP(){
   const guests = document.getElementById("guests").value;
 
   fetch(SCRIPT_URL, {
-  method: "POST",
-  mode: "no-cors",
-  body: JSON.stringify({
-    name: name,
-    attending: attending,
-    guests: guests
-  })
-});
-
-document.getElementById("response").innerText = "Շնորհակալություն 💌";
-  })
-  .catch(() => {
-    document.getElementById("response").innerText = "Սխալ, փորձեք կրկին";
+    method: "POST",
+    mode: "no-cors",
+    body: JSON.stringify({
+      name,
+      attending,
+      guests
+    })
   });
+
+  document.getElementById("response").innerText = "Շնորհակալություն 💌";
 }
 </script>
 
